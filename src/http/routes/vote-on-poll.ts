@@ -15,6 +15,8 @@ export async function voteOnPoll(app: FastifyInstance) {
     const { pollOptionId } = voteOnPollBody.parse(request.body)
     const { pollId } = voteOnPollParams.parse(request.params)
 
+    const sessionId = crypto.randomUUID()
+
     return reply.status(201).send()
   })
 }
